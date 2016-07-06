@@ -107,11 +107,11 @@ local function pre_process(msg)
 	  local name_log = print_name:gsub("_", "")
 	  if msg.to.type == 'chat' or msg.to.type == 'channel' then
 		if username then
-			savelog(msg.to.id, name_log.." @"..username.." ["..msg.from.id.."] kicked for #spam")
-			send_large_msg(receiver , "Don't spam\n@"..username.."["..msg.from.id.."]\n")
+			savelog(msg.to.id, name_log.."#User @"..username.." kicked for #spam")
+			send_large_msg(receiver , "تم ✅ الكشف عن وجود التفليش 🔞\nتم طرد العضو 👤🔷 \nيرجى اتباع القوانين ✔️📋\n\n #User@"..username.."["..msg.from.id.."]\n")
 		else
-			savelog(msg.to.id, name_log.." ["..msg.from.id.."] kicked for #spam")
-			send_large_msg(receiver , "Don't spam\nName:"..name_log.."["..msg.from.id.."]\n")
+			savelog(msg.to.id, name_log.." kicked for #spam")
+			send_large_msg(receiver , "تم ✅ الكشف عن وجود التفليش 🔞\nتم طرد العضو 👤🔷 \nيرجى اتباع القوانين ✔️📋\n\nName:"..name_log.."["..msg.from.id.."]\n")
 		end
 	  end
       -- incr it on redis

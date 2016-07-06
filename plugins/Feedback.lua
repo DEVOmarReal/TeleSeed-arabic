@@ -1,13 +1,12 @@
 --[[
 ▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
 ▀▄ ▄▀                                      ▀▄ ▄▀ 
-▀▄ ▄▀    BY OmarRea;                       ▀▄ ▄▀ 
+▀▄ ▄▀    BY OmarReal                       ▀▄ ▄▀ 
 ▀▄ ▄▀     BY OmarReal (Omar_Real7)         ▀▄ ▄▀ 
 ▀▄ ▄▀ JUST WRITED BY OmarReal              ▀▄ ▄▀   
-▀▄ ▄▀                                      ▀▄ ▄▀ 
+▀▄ ▄▀ arabic : @mohammedzedan              ▀▄ ▄▀ 
 ▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
---]]
-
+—]]
 do
 
  function run(msg, matches)

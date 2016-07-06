@@ -1,32 +1,29 @@
-
 do
 
-local function run(msg, matches)
-  if matches[1] == 'me' then
-    if is_sudo(msg) then
-    send_document(get_receiver(msg), "./files/me/sudo.webp", ok_cb, false)
-      return "you are sudo"
-    elseif is_admin1(msg) then
-    send_document(get_receiver(msg), "./files/me/admin.webp", ok_cb, false)
-      return "you are moderator"
-    elseif is_owner(msg) then
-    send_document(get_receiver(msg), "./files/me/leader.webp", ok_cb, false)
-      return "you are leader"
-    elseif is_momod(msg) then
-    send_document(get_receiver(msg), "./files/me/moderator.webp", ok_cb, false)
-      return "you are moderator"
-    else
-    send_document(get_receiver(msg), "./files/me/member.webp", ok_cb, false)
-      return "You are just member"
-    end
-  end
-end
+local function DevPoint(msg, matches)
+if is_sudo(msg) then 
+        local text = "أنـت مـطـور الـبـؤت 🕵🔧".."\n".."🆔 أيـديــك : "..msg.from.id.."\n".."🏧- أســمـك : "..msg.from.first_name.."\n".."🚸- مــعــرفــك  : @"..msg.from.username.."\n".."©- أســم ألـمـجـمـوعـة   "..msg.to.title 
+        return reply_msg(msg.id, text, ok_cb, false)
+     end
+if is_momod(msg) then 
+        local text = "أنـت أدمــن ألـكـروب 🛳⚓️".."\n".."🆔- أيــديــك  : "..msg.from.id.."\n".."🏧- أســمـك : "..msg.from.first_name.."\n".."🚸- مــعــرفــك : @"..msg.from.username.."\n".."©- أســم ألـمـجـمـوعـة "..msg.to.title
+        return reply_msg(msg.id, text, ok_cb, false)
+     end
+if not is_momod(msg) then 
+        local text = "أنـت عـضـوو 😹💙".."\n".."🆔- أيـديــك : "..msg.from.id.."\n".."🏧- أســمـك : "..msg.from.first_name.."\n".."🚸- مــعــرفــك : @"..msg.from.username.."\n".."©- أسـم ألـمـجـمـوعـة "..msg.to.title
+        return reply_msg(msg.id, text, ok_cb, false)
+     end
+if is_owner(msg) then 
+        local text = "أنـت مــديــر ألـكـروب 🤖🤘🏼".."\n".."🆔- أيــديــك : "..msg.from.id.."\n".."🏧- أســمـك : "..msg.from.first_name.."\n".."🚸- مــعــرفــك  : @"..msg.from.username.."\n".."©- أســم ألـمـجـمـوعـة   "..msg.to.title
+        return reply_msg(msg.id, text, ok_cb, false)
+     end
+     end
 
-return {
+return {  
   patterns = {
-    "^([Mm]e)$",
-    "^([Mm]e)$"
-    },
-  run = run
+       "^[!/](me)$",
+  },
+  run = DevPoint,
 }
+
 end
