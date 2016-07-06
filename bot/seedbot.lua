@@ -234,7 +234,8 @@ function create_config( )
 	"run2",
 	"Welcome",
 	"getlink",
-	"version",
+	"msg_checks",
+	"version"
 	
     },
     sudo_users = {110626080,103649648,111020322,0,tonumber(our_id)},--Sudo users
