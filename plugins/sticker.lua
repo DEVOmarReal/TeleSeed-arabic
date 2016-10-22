@@ -1,7 +1,18 @@
+--[[
+▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
+▀▄ ▄▀                                      ▀▄ ▄▀ 
+▀▄ ▄▀     Update BY :                      ▀▄ ▄▀ 
+▀▄ ▄▀     BY OmarReal (Omar_Real)          ▀▄ ▄▀ 
+▀▄ ▄▀     BY ALI ALNWAB (LAUESDEVD)        ▀▄ ▄▀   
+▀▄ ▄▀                                      ▀▄ ▄▀ 
+▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
+--]]
+
+
 local function tosticker(msg, success, result)
   local receiver = get_receiver(msg)
   if success then
-    local file = 'sticker'..msg.from.id..'.webp'
+    local file = 'ملصق'..msg.from.id..'.webp'
     print('File downloaded to:', result)
     os.rename(result, file)
     print('File moved to:', file)
@@ -21,7 +32,7 @@ local function run(msg,matches)
       		end
       	end
     
-      if matches[1] == "sticker" then
+      if matches[1] == "ملصق" then
     	redis:get("photo:sticker")  
         load_photo(msg.reply_id, tosticker, msg)
     end
@@ -29,7 +40,7 @@ end
 end
 return {
   patterns = {
-	"^/(sticker)$",
+	"^/(ملصق)$",
 	"%[(photo)%]",
   },
   run = run,

@@ -3,12 +3,12 @@ local function save_value(msg, name, value)
     return "Usage: !set var_name value"
   end
   local hash = nil
-  if msg.to.type == 'chat' then
+  if msg.to.type == 'chat' or msg.to.type == 'channel'  then
     hash = 'chat:'..msg.to.id..':variables'
   end
   if hash then
     redis:hset(hash, name, value)
-    return "Saved "..name
+    return "تم الحفض "..name
   end
 end
 local function run(msg, matches)
@@ -25,7 +25,7 @@ end
 
 return {
   patterns = {
-   "^[!/]save ([^%s]+) (.+)$"
+   "^[#!/]احفض ([^%s]+) (.+)$"
   }, 
   run = run 
 }
